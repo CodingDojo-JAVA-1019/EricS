@@ -71,7 +71,31 @@ public class Puzzle{
         
     }
 
-    
+    // TODO  Create a random string that is 5 characters long.
+    public String randomString(){
+        String[] characters = "abcdefghijklmnopqrstuvwxyz".split("");
+        Collections.shuffle(Arrays.asList(characters));
+        // ArrayList<String> ran5 = new ArrayList<String>();
+        String random5 = "";
+        for(int i=0; i<5; i++){
+            random5 += (characters[i]);
+        }
+        // char[] charStr = ran5;
+        
+        // random5 = random5.copyValueOf(charStr,0, 5);
+
+        System.out.println(random5);
+        return random5;
+    }
+
+    //TODO Generate an array with 10 random strings that are each 5 characters long
+    public void ranArrayList(){
+        ArrayList<String> ran10 = new ArrayList<String>();
+        for(int i=0; i<10; i++){
+            ran10.add(randomString());
+        }
+        System.out.println(ran10);
+    }
 
     public int[] tenRandom(){
         int[] tenRand = new int[10];
