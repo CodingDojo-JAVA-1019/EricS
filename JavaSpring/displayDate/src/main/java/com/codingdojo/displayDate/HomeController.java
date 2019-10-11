@@ -4,31 +4,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.time.LocalDate;
-import java.util.Date;
+import java.util.*;
+import java.util.date;
 
 @Controller
-
-//public class javaDate{
-//	public static void main(String[] args) {
-//		LocalDate jDate = LocalDate.now();
-//	}
-//}
-
 public class HomeController {
+	
 	@RequestMapping("/")
 	public String home() {
 		return "index.jsp";
 	}
-
 	
 	@RequestMapping("/date")
-	public String currentDate("date", "jDate") {
+	public String currentDate(Model model) {
+		Date da = new Date();
+		model.addAttribute("da", "cDate");
 		return "date.jsp";
 	}
 	@RequestMapping("/time") 
 	public String currentTime(Model model) {
-		model.addAttribute("time", "jTime");
+		Time ti = new Time();
+		model.addAttribute("cTime", "ti");
 		return "time.jsp";
 	}
 }
